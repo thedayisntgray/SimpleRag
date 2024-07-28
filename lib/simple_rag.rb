@@ -17,10 +17,6 @@ module SimpleRag
   class Error < StandardError; end
 
   class Runner
-    def get_text_embedding(client, input)
-      embeddings_batch_response = client.embeddings({model: "mistral-embed", input: input})
-      embeddings_batch_response.dig("data", 0, "embedding")
-    end
 
     def run_mistral(client, user_message, model: "mistral-medium-latest")
       messages = [{role: "user", content: user_message}]
