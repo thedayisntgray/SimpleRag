@@ -11,20 +11,10 @@ require_relative "simple_rag/cli"
 require "zeitwerk"
 
 loader = Zeitwerk::Loader.for_gem
-loader.setup # ready!
-
-# dont need this
-# # Add in zeitwerk
-# require "zeitwerk"
-# loader = Zeitwerk::Loader.new
-# loader.tag = File.basename(__FILE__, ".rb")
-# loader.inflector = Zeitwerk::GemInflector.new(__FILE__)
-# loader.push_dir(File.dirname(__FILE__))
+loader.setup
 
 module SimpleRag
   class Error < StandardError; end
-  # loader = Zeitwerk::Loader.for_gem
-  # loader.setup
 
   class Runner
     def get_text_embedding(client, input)
