@@ -25,6 +25,7 @@ module SimpleRag
     end
 
     def do_everything
+      #Load
       response = HTTParty.get("https://raw.githubusercontent.com/run-llama/llama_index/main/docs/docs/examples/data/paul_graham/paul_graham_essay.txt")
       text = response.body
 
@@ -47,8 +48,6 @@ module SimpleRag
       text_embeddings = chunks.map { |chunk| get_text_embedding(client, chunk) }
 
       text_embeddings = Numo::DFloat[*text_embeddings]
-
-      text_embeddings.shape
 
       d = text_embeddings.shape[1]
       index = Faiss::IndexFlatL2.new(d)
