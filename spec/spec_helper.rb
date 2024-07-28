@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'rspec'
-require 'simple_rag'
+require "rspec"
+require "simple_rag"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

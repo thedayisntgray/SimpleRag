@@ -8,12 +8,12 @@ require "io/console"
 require "mistral-ai"
 require_relative "simple_rag/version"
 require_relative "simple_rag/cli"
-require 'zeitwerk'
+require "zeitwerk"
 
 loader = Zeitwerk::Loader.for_gem
 loader.setup # ready!
 
-#dont need this
+# dont need this
 # # Add in zeitwerk
 # require "zeitwerk"
 # loader = Zeitwerk::Loader.new
@@ -39,7 +39,7 @@ module SimpleRag
     end
 
     def do_everything
-      #Load
+      # Load
       response = HTTParty.get("https://raw.githubusercontent.com/run-llama/llama_index/main/docs/docs/examples/data/paul_graham/paul_graham_essay.txt")
       text = response.body
 
@@ -52,7 +52,7 @@ module SimpleRag
 
       chunks.length
 
-      api_key = ENV["MISTRAL_KEY"] || ENV['MISTRAL_AI_KEY'] || STDIN.getpass("Type your API Key: ")
+      api_key = ENV["MISTRAL_KEY"] || ENV["MISTRAL_AI_KEY"] || STDIN.getpass("Type your API Key: ")
 
       client = Mistral.new(
         credentials: {api_key: api_key},

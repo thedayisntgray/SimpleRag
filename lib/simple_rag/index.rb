@@ -1,4 +1,4 @@
 module SimpleRag
-  class Index 
+  class Index
   end
 end

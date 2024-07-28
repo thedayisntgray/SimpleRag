@@ -1,4 +1,4 @@
 module SimpleRag
-  class Retrieve 
+  class Retrieve
   end
 end
