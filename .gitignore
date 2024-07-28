@@ -1,0 +1,15 @@
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+*.gem
+.env
+build_and_install_simple_rag.sh
+
+
+# rspec failure tracking
+.rspec_status
