@@ -9,4 +9,5 @@ Gem::Specification.new do |spec|
   spec.executables = ["simple_rag"]
   spec.bindir = "exe"
   spec.require_paths = ["lib"]
+
 end

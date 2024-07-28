@@ -1,4 +1,7 @@
+require 'rspec'
 
-describe Index do
-  it 'can be created'
+RSpec.describe SimpleRag::Index do
+  it 'can be created' do
+    index = SimpleRag::Index.new
+  end
 end
