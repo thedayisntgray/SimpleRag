@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require "simple_rag"
+
+SimpleRag::CLI.start(ARGV)
