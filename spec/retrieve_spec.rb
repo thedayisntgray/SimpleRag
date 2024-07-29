@@ -1,4 +1,4 @@
-RSpec.describe SimpleRag::Retrieve do
+describe SimpleRag::Retrieve do
   describe '#get_text_embedding' do
     let(:client) { double("Client") }
     let(:input) { "sample text" }
