@@ -15,3 +15,4 @@ gem "faiss"
 gem "mistral-ai"
 gem "zeitwerk", "~> 2.6", ">= 2.6.11"
 gem "dotenv", groups: [:development, :test]
+gem "byebug", groups: [:development, :test]

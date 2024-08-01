@@ -9,6 +9,7 @@
 *.gem
 .env
 build_and_install_simple_rag.sh
+.byebug_history
 
 
 # rspec failure tracking

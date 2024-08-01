@@ -2,8 +2,7 @@ module SimpleRag
   class CLI
     def self.start(args)
       puts "Hello from SimpleRag!"
-      # Your code here
-      SimpleRag::Runner.new.init
+      SimpleRag::Engine.new.run
     end
   end
 end
