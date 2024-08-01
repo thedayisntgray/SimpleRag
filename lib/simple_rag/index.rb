@@ -15,13 +15,13 @@ module SimpleRag
 
     def chunk(text)
       chunk_size = 2048
-      chunks = text.chars.each_slice(chunk_size).map(&:join)
-      chunks
+      text.chars.each_slice(chunk_size).map(&:join)
+
       # SimpleRag::Embed.embed_chunks(client,chunks)
     end
 
     def embed_chunks(chunks)
-      SimpleRag::Embed.embed_chunks(@client,chunks)
+      SimpleRag::Embed.embed_chunks(@client, chunks)
     end
 
     def save(text_embeddings)

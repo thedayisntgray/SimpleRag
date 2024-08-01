@@ -5,8 +5,8 @@ module SimpleRag
       embeddings_batch_response.dig("data", 0, "embedding")
     end
 
-    def self.embed_chunks(client,chunks)
-      text_embeddings = chunks.map { |chunk| self.embed_text(client, chunk) }
+    def self.embed_chunks(client, chunks)
+      text_embeddings = chunks.map { |chunk| embed_text(client, chunk) }
       Numo::DFloat[*text_embeddings]
     end
   end

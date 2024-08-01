@@ -8,7 +8,7 @@ require "io/console"
 require "mistral-ai"
 require "zeitwerk"
 require "dotenv/load"
-require 'byebug'
+require "byebug"
 require_relative "simple_rag/version"
 require_relative "simple_rag/cli"
 
@@ -25,7 +25,7 @@ module SimpleRag
       chat_response.dig("choices", 0, "message", "content")  # .choices[0].message.content
     end
 
-  DEFAULT_URL = "http://www.paulgraham.com/worked.html"
+    DEFAULT_URL = "http://www.paulgraham.com/worked.html"
 
     def prompt_user_for_url
       print "Specify a URL to an HTML document you would like to ask questions of (Default: What I Worked On by Paul Graham): "
@@ -51,7 +51,7 @@ module SimpleRag
 
     def run
       url = get_url
-      
+
       # Setup LLM of choice
       api_key = ENV["MISTRAL_AI_KEY"] || STDIN.getpass("Type your API Key: ")
       raise "Missing API Key" unless api_key
@@ -65,17 +65,17 @@ module SimpleRag
       index_instance = SimpleRag::Index.new(client)
       text = index_instance.load("https://raw.githubusercontent.com/run-llama/llama_index/main/docs/docs/examples/data/paul_graham/paul_graham_essay.txt")
       # text = "Ruby and AI will take over the world. - Landon"
-      chunks  = index_instance.chunk(text)
+      chunks = index_instance.chunk(text)
       text_embeddings = index_instance.embed_chunks(chunks)
       index = index_instance.save(text_embeddings)
 
-      #Retrieval
+      # Retrieval
       retrieve_instance = SimpleRag::Retrieve.new(client)
       query = retrieve_instance.query("What were the two main things the author worked on before college?")
       retrieve_instance.save_index(index)
       retrieve_instance.save_chunks(chunks)
       question_embedding = retrieve_instance.embed_query
-      retrieved_chunks = retrieve_instance.similarity_search(question_embedding,2)
+      retrieved_chunks = retrieve_instance.similarity_search(question_embedding, 2)
 
       # Generation
       prompt = SimpleRag::Generate.new.prompt(query, retrieved_chunks)
