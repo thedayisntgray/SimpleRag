@@ -19,13 +19,15 @@ module SimpleRag
   class Error < StandardError; end
 
   class Engine
+
+    DEFAULT_URL = "https://raw.githubusercontent.com/run-llama/llama_index/main/docs/docs/examples/data/paul_graham/paul_graham_essay.txt"
+
     def run_mistral(client, user_message, model: "mistral-medium-latest")
       messages = [{role: "user", content: user_message}]
       chat_response = client.chat_completions({model: model, messages: messages})
-      chat_response.dig("choices", 0, "message", "content")  # .choices[0].message.content
+      chat_response.dig("choices", 0, "message", "content")
     end
 
-    DEFAULT_URL = "http://www.paulgraham.com/worked.html"
 
     def prompt_user_for_url
       print "Specify a URL to an HTML document you would like to ask questions of (Default: What I Worked On by Paul Graham): "
@@ -63,8 +65,7 @@ module SimpleRag
 
       # Indexing
       index_instance = SimpleRag::Index.new(client)
-      text = index_instance.load("https://raw.githubusercontent.com/run-llama/llama_index/main/docs/docs/examples/data/paul_graham/paul_graham_essay.txt")
-      # text = "Ruby and AI will take over the world. - Landon"
+      text = index_instance.load(url)
       chunks = index_instance.chunk(text)
       text_embeddings = index_instance.embed_chunks(chunks)
       index = index_instance.save(text_embeddings)

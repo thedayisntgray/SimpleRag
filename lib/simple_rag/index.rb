@@ -16,8 +16,6 @@ module SimpleRag
     def chunk(text)
       chunk_size = 2048
       text.chars.each_slice(chunk_size).map(&:join)
-
-      # SimpleRag::Embed.embed_chunks(client,chunks)
     end
 
     def embed_chunks(chunks)
