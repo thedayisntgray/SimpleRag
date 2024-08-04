@@ -5,13 +5,17 @@ RSpec.describe SimpleRag::Index do
     let(:response) { double("HTTParty::Response", body: response_body) }
     let(:file_path) { "data/essay.txt" }
 
+    let(:api_key) { "your_api_key_here" }
+    let(:options) { { server_sent_events: true } }
+    let(:client) { Mistral.new(credentials: { api_key: api_key }, options: options) }
+
     before do
       allow(HTTParty).to receive(:get).with(url).and_return(response)
       allow(File).to receive(:write)
     end
 
     it "fetches the text from the URL and writes it to a file" do
-      index = SimpleRag::Index.new
+      index = SimpleRag::Index.new(client)
       result = index.load(url)
 
       expect(HTTParty).to have_received(:get).with(url)

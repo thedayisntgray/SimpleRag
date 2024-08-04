@@ -28,10 +28,10 @@ module SimpleRag
       chat_response.dig("choices", 0, "message", "content")
     end
 
-
+    #url validator method
     def prompt_user_for_url
       print "Specify a URL to an HTML document you would like to ask questions of (Default: What I Worked On by Paul Graham): "
-      input_url = STDIN.gets.chomp
+      input_url = gets.chomp
       input_url.empty? ? DEFAULT_URL : input_url
     end
 
@@ -53,6 +53,7 @@ module SimpleRag
 
     def run
       url = get_url
+      puts "Document Downloaded"
 
       # Setup LLM of choice
       api_key = ENV["MISTRAL_AI_KEY"] || STDIN.getpass("Type your API Key: ")
@@ -64,24 +65,36 @@ module SimpleRag
       )
 
       # Indexing
+      puts "Initialize indexing"
       index_instance = SimpleRag::Index.new(client)
+      puts "Loading url"
       text = index_instance.load(url)
+      puts "Chunk text" 
       chunks = index_instance.chunk(text)
+      puts "Embed chunks" 
       text_embeddings = index_instance.embed_chunks(chunks)
       index = index_instance.save(text_embeddings)
 
-      # Retrieval
       retrieve_instance = SimpleRag::Retrieve.new(client)
-      query = retrieve_instance.query("What were the two main things the author worked on before college?")
       retrieve_instance.save_index(index)
       retrieve_instance.save_chunks(chunks)
-      question_embedding = retrieve_instance.embed_query
-      retrieved_chunks = retrieve_instance.similarity_search(question_embedding, 2)
 
-      # Generation
-      prompt = SimpleRag::Generate.new.prompt(query, retrieved_chunks)
+      loop do
+        print "Enter your query (or type 'exit' to quit): "
+        query = gets.chomp
+        break if query.downcase == 'exit'
+        puts
 
-      puts run_mistral(client, prompt)
+        # Retrieval/Search
+        question_embedding = retrieve_instance.embed_query(query)
+        retrieved_chunks = retrieve_instance.similarity_search(question_embedding, 2)
+
+        # Generation
+        prompt = SimpleRag::Generate.new.prompt(query, retrieved_chunks)
+
+        puts run_mistral(client, prompt)
+        puts
+      end
     end
   end
 end

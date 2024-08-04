@@ -9,8 +9,8 @@ describe SimpleRag::Retrieve do
     end
 
     it "returns the embedding from the client response" do
-      embedding = SimpleRag::Embed.new
-      result = embedding.get_text_embedding(client, input)
+      embedding = SimpleRag::Embed
+      result = embedding.embed_text(client, input)
       expect(result).to eq([0.1, 0.2, 0.3])
     end
   end

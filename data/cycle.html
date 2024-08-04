@@ -1,0 +1,246 @@
+hdokiejnpimakedhajhdlcegeplioahd
+
+</article>
+<script>
+//Block Requirejs
+</script>
+</div><iframe name="__tcfapiLocator" style="display: none;" src="./cycle_files/saved_resource.html"></iframe><iframe name="__uspapiLocator" style="display: none;" src="./cycle_files/saved_resource(1).html"></iframe><iframe name="__gppLocator" style="display: none;" src="./cycle_files/saved_resource(2).html"></iframe>
+<script id="selligent-tag">
+function selligent_initialiser() {
+window.wa = document.createElement("script"),
+wa_s = document.getElementsByTagName("script")[0];
+window.wa.src = "https://targetemsecure.blob.core.windows.net/138526d1-8ff9-4de4-b84a-3a11ec020ede/138526d18ff94de4b84a3a11ec020ede_1.js";
+window.wa.type = "text/javascript";
+wa_s.parentNode.insertBefore(wa, wa_s);
+window.wa.bt_queue = [];
+const properties = window.ffte?.properties;
+let vertical_subsection_tags = {};
+let tags = {};
+if(properties) {
+vertical_subsection_tags = properties.articleCategoryHandle.map(category => {
+return { "tag": "VERTICAL_SUB_SECTION", "value": category }
+});
+tags = properties.articleTagHandle.map(tag => {
+return { "tag": "TAGS", "value": tag }
+});
+}
+window.wa.afterInit = function(){
+window.wa.bt_queue.push({
+"customIdentifier": "",
+"async": true,
+"isEvent": false,
+"isTargeting": true,
+"tagValues":[
+{ "tag": "CATEGORY", "value": window.ffte.properties?.articleVertical || '' },
+...vertical_subsection_tags,
+...tags,
+{ "tag": "FEP_PRODUCTS", "value": window.fepPrimaryProduct },
+{ "tag": "FEP_PRODUCTS", "value": window.fepSecondaryProducts }
+],
+"exposedFields": [
+{ "field": "Number_of_hits_in_the_last_day" },
+{ "field": "Average_time__minutes__per_visit" }
+]
+});
+}
+}
+window.vanilla.featureFlags.selligent.enabled && window.reliablePageLoad.then(function(){
+reliableConsentGiven.then(function (consentResponse) {
+if (consentResponse.consent && consentResponse.consent.gdprApplies) {
+// for Sourcepoint
+if (window._sp_) {
+__tcfapi('getCustomVendorConsents', 2, function (consent, success) {
+var selligentID = '618d115d5c485f079ca75e9e';
+// Purposes for selligent = 5, 6, 8, 10
+var purposes = consentResponse.consent.purpose.consents;
+var relevantPurposes = [purposes[5], purposes[6], purposes[8], purposes[10]];
+var consentForPurposes = relevantPurposes.every((purpose) => purpose);
+if (consent.consentedVendors.find(e => e._id === selligentID) && consentForPurposes){
+selligent_initialiser();
+}
+});
+}
+}
+});
+ccpaAppliesPromise.then(function (ccpaApplies) {
+if (ccpaApplies) {
+selligent_initialiser();
+}
+});
+});
+</script>
+<script type="module" id="hawklinks-script" async="" src="./cycle_files/hawklinks.js"></script>
+<footer id="document-footer" class="legacy-container full" aria-label="footer content">
+<div id="document-footer-content">
+<p>Cyclingnews is part of Future plc, an international media group and leading digital publisher. <a href="https://futureplc.com/" target="_blank">Visit our corporate site</a>.</p>
+<nav aria-label="Footer Navigation">
+<ul>
+<li><a href="https://futureplc.com/terms-conditions/" target="_blank">Terms and conditions</a></li>
+<li><a href="https://futureplc.com/contact/" target="_blank">Contact Future's experts</a></li>
+<li><a href="https://futureplc.com/privacy-policy/" target="_blank">Privacy policy</a></li>
+<li><a href="https://futureplc.com/cookies-policy/" target="_blank">Cookies policy</a></li>
+<li><a href="https://futureplc.com/accessibility-statement/">Accessibility statement</a></li>
+<li><a href="https://futureplc.com/careers/" target="_blank">Careers</a></li>
+<li><a href="https://go.future-advertising.com/Cyclingnews-Media-Kit.html" target="_blank">Advertise with us</a></li>
+<li><a href="https://www.cyclingnews.com/privacy-portal">Do not sell or share my personal information</a></li></ul>
+</nav>
+<p>©
+Future Publishing Limited Quay House, The Ambury,
+Bath
+BA1 1UA. All rights reserved. England and Wales company registration number 2008885. </p>
+</div>
+</footer>
+<script>
+window.vanL10N = null;
+</script> <!-- Begin comScore Tag -->
+<script>
+function comscoreIntegration() {
+var TIMEOUT_DELAY = 2000;
+var COMSCORE_ID = "10055482";
+function callComscore(ucfrValue) {
+window._comscore = window._comscore || [];
+var comscorePayload = {
+c1: "2",
+c2: COMSCORE_ID,
+options: {
+enableFirstPartyCookie: true,
+}
+};
+if(ucfrValue) {
+comscorePayload.cs_ucfr = ucfrValue;
+}
+window._comscore.push(comscorePayload);
+injectComscore();
+}
+function callComscoreForVideo(ucfrValue) {
+window._comscore = window._comscore || [];
+const seconds = 600;
+const comscorePayload = {
+c2: COMSCORE_ID,
+c5: jwplayer().getDuration() > seconds ? "03" : "02",
+};
+if(ucfrValue) {
+comscorePayload.cs_ucfr = ucfrValue;
+}
+if (!window.COMSCORE) {
+window._comscore.push(comscorePayload);
+} else {
+window.COMSCORE.beacon(comscorePayload)
+}
+}
+function injectComscore() {
+let s = document.createElement('script'), el = document.getElementsByTagName("script")[0];
+s.async = true;
+const URLbeginning = "https://sb";
+if (window.__tcfapi) {
+s.src = URLbeginning + '.scorecardresearch.com/cs/' + COMSCORE_ID + '/beacon.js';
+} else {
+s.src = URLbeginning + '.scorecardresearch.com/beacon.js';
+}
+el.parentNode.insertBefore(s, el);
+}
+if (window.__tcfapi) {
+var timeout = window.setTimeout(function() {
+callComscore();
+}, TIMEOUT_DELAY);
+window.__tcfapi('addEventListener', 2, function(res) {
+window.__tcfapi('removeEventListener', 2, function() {}, res.listenerId);
+const validStatus = ['tcloaded', 'useractioncomplete'];
+if (validStatus.includes(res.eventStatus) && res.gdprApplies) {
+window.clearTimeout(timeout);
+callComscore(res.vendor?.consents?.[77] ? 1 : 0);
+}
+});
+} else {
+callComscore();
+}
+window.reliablePageLoad.then(function () {
+window.document.addEventListener('jwplayerInstanceLoaded', function () {
+jwplayer().once('beforePlay', function () {
+callComscoreForVideo();
+});
+});
+});
+}
+comscoreIntegration();
+</script>
+<noscript>
+<img src="https://sb.scorecardresearch.com/p/?c1=2&amp;c2=10055482&amp;cv=4.4.0&amp;cj=1">
+</noscript>
+<!-- End comScore Tag -->
+<script type="text/javascript">
+var disqus_identifier = '';
+var disqus_shortname = 'cylingnewsofficial';
+var disqus_url = 'https://www.cyclingnews.com/news/a-team-that-ive-always-admired-bob-jungels-signs-two-year-deal-with-ineos-grenadiers/';
+</script>
+<script>
+var dfp_config = {
+"site_platform": "vanilla",
+"keywords": "serversidehawk,road",
+"bordeaux_keywords": "",
+"author": "Barry Ryan",
+"template": "standard",
+"sponsored": "",
+"article_id": "RgX4zUVrEMRKzXYJpTAvdY",
+"vanilla_article_id": "RgX4zUVrEMRKzXYJpTAvdY",
+"page_type": "news",
+"product_brand": "",
+"product_category": "",
+"product": "",
+"vertical": "",
+"category": "",
+"child_category": "",
+"grandchild_category": "",
+"source": "",
+"provertical": "",
+"jwplayer": "carousel"
+}
+</script>
+<script>window.vanillaComponents=[{"parentIdentifier":"#article-body","targetIdentifier":".fwd-link","eventType":"click","action":"Click on Forward Linker","elementName":"Forward Linker","addMoreInfo":false},{"parentIdentifier":"#article-body","targetIdentifier":"a","excludeTargetClass":"fwd-link","eventType":"click","action":"Click on Inline Link","elementName":"Inline Link","addMoreInfo":false},{"parentIdentifier":".pagination-numerical-list","targetIdentifier":".pagination-numerical-list-item a","eventType":"click","action":"Click on Article Pagination","elementName":"Article Pagination Number","addMoreInfo":true},{"parentIdentifier":".navigation-sequential","targetIdentifier":".prev,.next","eventType":"click","action":"Click on Article Pagination","elementName":"Article Pagination Prev\/Next","addMoreInfo":true},{"parentIdentifier":".socialite-widget","targetIdentifier":"a","eventType":"click","action":"Click on Article Social","elementName":"Article Social","addMoreInfo":true},{"parentIdentifier":"#articleTag","targetIdentifier":".tag a","eventType":"click","action":"Click on Article Tag","elementName":"Article Tag","addMoreInfo":false},{"parentIdentifier":".author-block-social-nav","targetIdentifier":"a","eventType":"click","action":"Click on Author Social","elementName":"Author Social","addMoreInfo":true},{"parentIdentifier":"#article-body","targetIdentifier":"a[data-event-label=elkInjectedRelatedBlock]","eventType":"click","action":"Click on ELK Injected Related Block","elementName":"ELK Injected Related Block","addMoreInfo":false},{"parentIdentifier":".newsletter-signup","targetIdentifier":".emailform","eventType":"visible","action":"Email sign-up sidebar is visible","elementName":"SIGNUP - Side Bar","addMoreInfo":false},{"parentIdentifier":".hawk-pre-order-main-container","targetIdentifier":".hawk-pre-order-form-container","eventType":"visible","action":"Hawk Widget is visible","elementName":"HAWK WIDGET","addMoreInfo":false},{"parentIdentifier":".list-text-links-trending-panel","targetIdentifier":".listingResult a","eventType":"click","action":"Click on News","elementName":"News Article","addMoreInfo":false},{"parentIdentifier":".menuitems","targetIdentifier":".menu-item a","eventType":"click","action":"Click on Nav Item","elementName":"Nav Item","addMoreInfo":true},{"parentIdentifier":".menuitems","targetIdentifier":".menu-item-more","eventType":"hover","action":"Hover on Nav Item","elementName":"Nav Item","addMoreInfo":true},{"targetIdentifier":".burgerbar .menu-hamburger","eventType":"click","action":"Click on Mobile Hamburger","elementName":"Mobile Hamburger","addMoreInfo":false},{"parentIdentifier":".burgerbar","targetIdentifier":".buttons-social a","eventType":"click","action":"Click on Nav Social","elementName":"Nav Social","addMoreInfo":true},{"targetIdentifier":"#club-login > div","eventType":"hover","action":"Hover on PC Gamer Club","elementName":"PC Gamer Club","addMoreInfo":false},{"parentIdentifier":"#club-login","targetIdentifier":"a","eventType":"click","action":"Click on PC Gamer Club Login\/Register","elementName":"PC Gamer Club Login\/Register","addMoreInfo":false},{"parentIdentifier":".recommendation-articles","targetIdentifier":".recommended-article a","eventType":"click","action":"Click on Recommended Article","elementName":"Recommended Article","addMoreInfo":false},{"targetIdentifier":".burgerbar .button-search","eventType":"click","action":"Click on Search","elementName":"Search","addMoreInfo":false},{"targetIdentifier":".burgerbar form.search-box","eventType":"submit","action":"Submit Search","elementName":"Search","addMoreInfo":false},{"targetIdentifier":".logo > a","eventType":"click","action":"Click on Site Logo","elementName":"Site Logo","addMoreInfo":false},{"parentIdentifier":".top-featured","targetIdentifier":".feature-block-item-wrapper a","eventType":"click","action":"Click on Featured Article","elementName":"Featured Article","addMoreInfo":false},{"parentIdentifier":".trending-items","targetIdentifier":".trending-item a","eventType":"click","action":"Click on Trending Bar Item","elementName":"Trending Bar Item","addMoreInfo":false},{"parentIdentifier":".trending-bar","targetIdentifier":".brand-items a","eventType":"click","action":"Click on Trending Bar - Brand Link","elementName":"Trending Bar - Brand Link","addMoreInfo":false},{"parentIdentifier":".slice-container.popular-box-slice .popular-box ol.popular-box__articles-list:nth-of-type(1)","targetIdentifier":".popular-box__article-list","eventType":"click","action":"Click on Popular List 1","elementName":"Popular List 1","addMoreInfo":false},{"parentIdentifier":".trending__items","targetIdentifier":".trending__item .trending__link","eventType":"click","action":"Click on Trending Bar Item","elementName":"Trending Bar Item","addMoreInfo":false}];</script>
+<!-- Google Tag Manager -->
+<script>
+(function(){
+(window.Promise
+? Promise.all([
+window.reliablePageLoad,
+window.reliableConsentGiven
+])
+: window.reliableConsentGiven
+).then(function(){
+setTimeout(
+function(){
+if (true ?? true) {
+window.vanilla.featureFlags.gtm.sitespecific && window.vanilla.loadGTM('GTM-TSHZLHD')
+}
+window.vanilla.featureFlags.gtm.vanilla && window.vanilla.loadGTM('GTM-KHCPGDF')
+}, 1500);
+});
+})();
+</script>
+<!-- End Google Tag Manager -->
+<!-- document assets - added by the article itself -->
+<script>
+window.vanilla.addJs({"id":"main-js","src":"\/\/vanilla.futurecdn.net\/cyclingnews\/1023702\/media\/shared\/js\/main.dcfe34adb1631f11541e.bundle.js"}, null, 0)
+window.vanilla.addCss({"href":"\/\/vanilla.futurecdn.net\/cyclingnews\/1023702\/media\/css\/cyclingnews.min.css"})
+</script>
+<script>
+window.ffte = {"site":"cyclingnews","endpoint":"\/\/api.vanilla.futurecdn.net\/article","locale":"US","lang":"en-us","gaCode":"UA-48905626-1","serverEnvironment":"live","staticHost":"vanilla.futurecdn.net\/cyclingnews","regionLink":"","regionUrl":"https:\/\/www.cyclingnews.com","isGlobal":false,"platform":"responsive","isKube":true,"l10ns":"[]","blueconic":null,"properties":{"articleProduct":[],"articleProductHandle":[],"articleType":"news","articleTemplate":"standard","articleTagHandle":["road"],"articleTagType":["discipline"],"articleControlTag":["serversidehawk"],"articleVerticalHandle":[],"articleCategoryHandle":[],"subSite":"","articleVertical":"","id":"RgX4zUVrEMRKzXYJpTAvdY","legacyId":"RgX4zUVrEMRKzXYJpTAvdY"}}
+</script>
+<script>
+window.xkeys = {"platform":"responsive","article":"RgX4zUVrEMRKzXYJpTAvdY","article-regionsetid":false,"articletype":"news","articletemplate":"standard","article-age":"recent","region":"US","language":"en","modifieddate":1722602159,"author":["A4DUnt8CXzwQFqut2j7sXW"],"tag":[]};
+</script>
+<script id="parsely-cfg" src="./cycle_files/p.js" async=""></script>
+<script type="text/javascript">!function(n){var t={};function e(i){if(t[i])return t[i].exports;var o=t[i]={i:i,l:!1,exports:{}};return n[i].call(o.exports,o,o.exports,e),o.l=!0,o.exports}e.m=n,e.c=t,e.d=function(n,t,i){e.o(n,t)||Object.defineProperty(n,t,{enumerable:!0,get:i})},e.r=function(n){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(n,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(n,"__esModule",{value:!0})},e.t=function(n,t){if(1&t&&(n=e(n)),8&t)return n;if(4&t&&"object"==typeof n&&n&&n.__esModule)return n;var i=Object.create(null);if(e.r(i),Object.defineProperty(i,"default",{enumerable:!0,value:n}),2&t&&"string"!=typeof n)for(var o in n)e.d(i,o,function(t){return n[t]}.bind(null,o));return i},e.n=function(n){var t=n&&n.__esModule?function(){return n.default}:function(){return n};return e.d(t,"a",t),t},e.o=function(n,t){return Object.prototype.hasOwnProperty.call(n,t)},e.p="",e(e.s=1207)}({1207:function(n,t,e){"use strict";e.r(t);var i,o=e(39);function a(n){var t,e,i,a=null;n.target.classList.contains(".kiosq-event-login")||n.target.classList.contains("kiosq-event-signup")?a=n.target:a=null!==(e=null!==(i=n.target.closest(".kiosq-event-login"))&&void 0!==i?i:n.target.closest(".kiosq-event-signup"))&&void 0!==e?e:null;if(a){var c={};a.getAttribute("data-paywall-param")&&(c={paywall:!0});var r=null!==(t=a.getAttribute("data-tracking"))&&void 0!==t?t:"barrier";a.classList.forEach((function(n){if(n.includes("kiosq-event-")){var t="kiosq-event-login"===n?"login":"signup";return window.ga("set","campaignSource",window.analytics_ga_data.dimension5),window.ga("set","campaignMedium",r),window.ga("set","campaignName",window.ffte.site),window.ga("send","event","Paywall Service","Interact with ".concat(Object(o.a)()),"Join From ".concat(r)),Object(o.b)("interact with ".concat(Object(o.a)()),"join from ".concat(r)),window.FUTR.Connect.Auth[t](c)}}))}}function c(n){var t,e=null;e=n.target;var i=document.querySelector("html").getAttribute("data-locale"),a=null!==(t=e.getAttribute("data-tracking"))&&void 0!==t?t:"barrier",c=window.FUTR.Kiosq,r=window.FUTR.Kiosq.cdsProvider&&i?i:"GB";return void 0!==c.CTALinks&&(window.location.href=c.CTALinks[r]),window.ga("set","campaignSource",window.analytics_ga_data.dimension5),window.ga("set","campaignMedium",a),window.ga("set","campaignName",window.ffte.site),window.ga("send","event","Paywall Service","Interact with ".concat(Object(o.a)()),"Subscription page"),Object(o.b)("interact with ".concat(Object(o.a)()),"subscription page"),null}document.querySelectorAll(".kiosq-event-login,.kiosq-event-signup").forEach((function(n){n.addEventListener("click",a)})),0!==(i=document.querySelectorAll(".kiosq-event-cta")).length&&i.forEach((function(n){n.addEventListener("click",c)})),document.querySelectorAll('a[href="#paywall-signup"]').forEach((function(n){n.href="",n.onclick=function(){var n=n||null;return window.ga("send","event","Paywall Service","Interact with ".concat(Object(o.a)()),"{% block JoinTrackingLinkAction %}Join{% endblock %}"),Object(o.b)("interact with ".concat(Object(o.a)()),"{% block JoinTrackingLinkAction %}Join{% endblock %}"),window.FUTR.Connect.Auth.signup(n)}})),document.querySelectorAll('a[href="#paywall-signin"]').forEach((function(n){n.onclick=function(){var n=n||null;return window.ga("send","event","Paywall Service","Interact with ".concat(Object(o.a)()),"{% block LoginTrackingLinkAction %}Login{% endblock %}"),Object(o.b)("interact with ".concat(Object(o.a)()),"{% block LoginTrackingLinkAction %}Login{% endblock %}"),window.FUTR.Connect.Auth.login(n)}}))},39:function(n,t,e){"use strict";e.d(t,"a",(function(){return i})),e.d(t,"b",(function(){return o}));var i=function(){var n=window.FUTR&&window.FUTR.Kiosq&&window.FUTR.Kiosq.wallType?window.FUTR.Kiosq.wallType:null,t=window.FUTR&&window.FUTR.Connect&&window.FUTR.Connect.Auth&&window.FUTR.Connect.Auth.kiosqUserIsAuthenticated?window.FUTR.Connect.Auth.kiosqUserIsAuthenticated:null;return n&&"regwall"===n||n&&"regwallAuthentication"===n?"regwall":n&&"paywall"===n?"paywall":n&&"regwallAuthPaywall"===n?t&&!0===t?"paywall":"regwall":void 0},o=function(n,t){console.log("%c KIOSQ ","background: #15C80A;color: #ffffff;","GA4-Tracking",{paywall:{action:n,label:t,type:"kiosq"}}),window.freyr.cmd.push((function(){window.freyr.pushAndUpdate("paywallEvent",{paywall:{action:n,label:t,type:"kiosq"}})}))}}});
+//# sourceMappingURL=cta-event-handler.js.map</script>
+<script>ffte = window.ffte || {}; ffte.logo = 'https://cdn.mos.cms.futurecdn.net/flexiimages/gmvwmhupgi1715762145.svg'; </script>
+
+<script>
+window.ftr_request_id = "";
+</script> 
+<script type="text/javascript" id="">function getUserConsentsUsnat(){__gpp("getUserConsentsUsnat",function(a,b){window.google_tag_manager[google_tag_manager["rm"]["96039803"](22)].dataLayer.set("data.Categories",void 0);window.google_tag_manager[google_tag_manager["rm"]["96039803"](23)].dataLayer.set("data.Vendors",void 0);"undefined"!==typeof dataLayer&&dataLayer.push({event:"__cmpConsentsCcpaVendors",data:a})})}getUserConsentsUsnat();</script>
+<script id="" text="" charset="" type="text/javascript" src="./cycle_files/adsm.macro.cyclingnews.com.js"></script><script type="text/javascript" id="" src="./cycle_files/galleryplayer.js"></script>
+<script type="text/javascript" id="">(function(b,a,c){var e=decodeURIComponent;var d="||";var g=";;",f="split",h="length",m="indexOf",k="localStorage",l="_ccmdt";b[c]=b[c]||{};b[c].us={};a=b[k]?b[k][l]||"":(a=a.cookie.match(l+"\x3d([^;]*)"))&&a[1]||"";e=e(a)[f](d);a=e[h];if(0<a)for(;a--;)d=e[a][f]("\x3d"),1<d[h]&&(-1<d[1][m](g)?(b[c].us[d[0]]=d[1][f](g),b[c].us[d[0]].pop()):b[c].us[d[0]]=d[1])})(window,document,"_ml");
+(function(){_ml=window._ml||{};_ml.eid="51599";_ml.informer={callback:function(e,d){"undefined"==typeof dataLayer||_ml.isEmptyObj(_ml.us)||dataLayer.push({event:"Bombora_Informer",Bombora_Topic:_ml.us.tp&&0<_ml.us.tp.length?_ml.us.tp[0]:"",Bombora_Company_Revenue:_ml.us.cr,Bombora_Company_Size:_ml.us.cs,Bombora_Domain:_ml.us.dm,Bombora_Seniority:_ml.us.sn,Bombora_Predictive_Category:_ml.us.pc&&0<_ml.us.pc.length?_ml.us.pc[0]:"",Bombora_Decision_Maker:_ml.us.dcm,Bombora_Functional_Area:_ml.us.fa&&
+0<_ml.us.fa.length?_ml.us.fa[0]:"",Bombora_Install_Data:_ml.us.ins&&0<_ml.us.ins.length?_ml.us.ins[0]:"",Bombora_Professional_Group:_ml.us.pg&&0<_ml.us.pg.length?_ml.us.pg[0]:"",Bombora_Education:_ml.us.edu,Bombora_Industry:_ml.us.ind})},enable:!0};var b=document.getElementsByTagName("script")[0],a=new Date,c=document.createElement("script");c.type="text/javascript";c.async=!0;c.src="https://ml314.com/tag.aspx?"+a.getDate()+a.getMonth()+a.getFullYear();b.parentNode.insertBefore(c,b)})();</script>
+<script type="text/javascript" id="">if(null!==google_tag_manager["rm"]["184150602"](27)){var el=document.createElement("script");el.async=!0;el.src="https://cdn.brandmetrics.com/tag/62da25c406df470db725091722ab7306/cyclingnews.js";document.head.append(el)};</script><script type="text/javascript" id="">window["captify_kw_query_"+google_tag_manager["rm"]["184150602"](28)]="";(function(c,d,e,b,a,f,g){a=c.createElement(d);b=c.getElementsByTagName(d)[0];a.type="text/javascript";a.async=!0;a.src=e;b.parentNode.insertBefore(a,b)})(document,"script","https://p.cpx.to/p/"+google_tag_manager["rm"]["184150602"](29)+"/px.js");</script><script type="text/javascript" id="" src="./cycle_files/pushly-sdk.min.js"></script><div id="future-auth"></div><div data-lastpass-root="" style="position: absolute !important; top: 0px !important; left: 0px !important; height: 0px !important; width: 0px !important;"><template shadowrootmode="closed"><div style="position: absolute; height: 100vh; width: 100vw; z-index: 2147483647; border-radius: 4px; top: 0px; left: 0px; max-height: 0px; max-width: 280px; min-width: auto;"><iframe data-lastpass-infield="true" allow="clipboard-write" src="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd/webclient-infield.html" style="border: none; height: 100%; width: 100%;"></iframe></div></template></div><script type="text/javascript" id="">var attemptCount=0,maxAttempts=5;function checkCMPLoaded(){window._sp_?dataLayer.push({event:"cmpLoaded"}):(attemptCount++,attemptCount<maxAttempts?setTimeout(checkCMPLoaded,1E3):console.error("CMP not loaded after 5 attempts"))}checkCMPLoaded();</script><script type="text/javascript" id="">function getCCPAusnatping(){"undefined"!==typeof __gpp?__gpp("ping",function(a,b){"undefined"!==typeof dataLayer&&dataLayer.push({event:"__cmpPingCCPA",ccpausnatPingData:a})}):"undefined"!==typeof dataLayer&&dataLayer.push({event:"__cmpPingCCPA"})}getCCPAusnatping();</script><script type="text/javascript" id="">function getGDPRping(){__tcfapi("ping",2,function(a){"undefined"!==typeof dataLayer&&dataLayer.push({event:"__cmpPingGDPR",gdprPingData:a})})}getGDPRping();</script>
+</body></html>

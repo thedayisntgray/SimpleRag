@@ -2,14 +2,8 @@ module SimpleRag
   class Retrieve
     def initialize(client)
       @client = client
-      @query = nil
       @chunks = nil
       @index = nil
-    end
-
-    def query(query)
-      @query = query
-      query
     end
 
     def save_chunks(chunks)
@@ -20,8 +14,8 @@ module SimpleRag
       @index = index
     end
 
-    def embed_query
-      query_embedding = SimpleRag::Embed.embed_text(@client, @query)
+    def embed_query(query)
+      query_embedding = SimpleRag::Embed.embed_text(@client, query)
       question_embeddings = Numo::DFloat[query_embedding]
     end
 

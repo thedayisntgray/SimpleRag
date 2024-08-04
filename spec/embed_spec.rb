@@ -12,21 +12,19 @@ RSpec.describe SimpleRag::Embed do
     allow(index).to receive(:add)
   end
 
-  describe "#get_text_embedding" do
+  describe "#embed_text" do
     it "returns the correct embedding from the client" do
-      embed_instance = SimpleRag::Embed.new
-      result = embed_instance.get_text_embedding(client, "some input")
+      embed_instance = SimpleRag::Embed
+      result = embed_instance.embed_text(client, "some input")
       expect(result).to eq([0.1, 0.2, 0.3])
     end
   end
 
-  describe "#embed" do
+  describe "#embed_chunks" do
     it "returns a Faiss index with the correct embeddings" do
-      embed_instance = SimpleRag::Embed.new
-      result = embed_instance.embed(client, chunks)
-      expect(result).to eq(index)
-      expect(Numo::DFloat).to have_received(:[]).with([0.1, 0.2, 0.3], [0.1, 0.2, 0.3])
-      expect(index).to have_received(:add).with(numo_array)
+      embed_instance = SimpleRag::Embed
+      result = embed_instance.embed_chunks(client, chunks)
+      expect(result).to be_a(Numo::DFloat)
     end
   end
 end
