@@ -19,7 +19,6 @@ module SimpleRag
   class Error < StandardError; end
 
   class Engine
-
     DEFAULT_URL = "https://raw.githubusercontent.com/run-llama/llama_index/main/docs/docs/examples/data/paul_graham/paul_graham_essay.txt"
 
     def run_mistral(client, user_message, model: "mistral-medium-latest")
@@ -28,7 +27,7 @@ module SimpleRag
       chat_response.dig("choices", 0, "message", "content")
     end
 
-    #url validator method
+    # url validator method
     def prompt_user_for_url
       print "Specify a URL to an HTML document you would like to ask questions of (Default: What I Worked On by Paul Graham): "
       input_url = gets.chomp
@@ -69,9 +68,9 @@ module SimpleRag
       index_instance = SimpleRag::Index.new(client)
       puts "Loading url"
       text = index_instance.load(url)
-      puts "Chunk text" 
+      puts "Chunk text"
       chunks = index_instance.chunk(text)
-      puts "Embed chunks" 
+      puts "Embed chunks"
       text_embeddings = index_instance.embed_chunks(chunks)
       index = index_instance.save(text_embeddings)
 
@@ -82,7 +81,7 @@ module SimpleRag
       loop do
         print "Enter your query (or type 'exit' to quit): "
         query = gets.chomp
-        break if query.downcase == 'exit'
+        break if query.downcase == "exit"
         puts
 
         # Retrieval/Search

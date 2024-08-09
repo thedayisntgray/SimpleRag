@@ -1,8 +1,9 @@
 module SimpleRag
   class Retrieve
+    attr_accessor :chunks
     def initialize(client)
       @client = client
-      @chunks = nil
+      # @chunks = nil
       @index = nil
     end
 

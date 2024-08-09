@@ -6,8 +6,8 @@ RSpec.describe SimpleRag::Index do
     let(:file_path) { "data/essay.txt" }
 
     let(:api_key) { "your_api_key_here" }
-    let(:options) { { server_sent_events: true } }
-    let(:client) { Mistral.new(credentials: { api_key: api_key }, options: options) }
+    let(:options) { {server_sent_events: true} }
+    let(:client) { Mistral.new(credentials: {api_key: api_key}, options: options) }
 
     before do
       allow(HTTParty).to receive(:get).with(url).and_return(response)
