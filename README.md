@@ -1,6 +1,10 @@
 # SimpleRag
 
-Simple Rag is a lightweight library that showcases the entire RAG architecture in a gem.
+<img src="https://github.com/user-attachments/assets/038b46f5-7064-4c68-a69c-6de1c886b687" alt="Screenshot" width="400"/>
+
+
+
+[Simple Rag](https://rubygems.org/gems/simple_rag) is a lightweight library that showcases the entire RAG architecture in a gem. No need for a vector database. All you need are a few light dependencies and a Mistral API key!
 
 The purpose of simple RAG is to showcase how RAG systems work by using the simplest tools possible to lower the friction to learning. This is not a gem to be used in production and I will likely be adding additional breaking changes to the code.
 
