@@ -8,7 +8,8 @@ module SimpleRag
     def load(url)
       response = HTTParty.get(url)
       text = response.body
-      File.write(corrected_file_path, text)
+
+      File.write(get_absolute_path, text)
       @text = text
       text
     end
@@ -29,12 +30,9 @@ module SimpleRag
       index
     end
 
-    private
-    def corrected_file_path
-      #Todo: Fix this terrible hack.
-      # Get the absolute path to the 'data' directory within the gem
-      data_dir = File.expand_path('../../../data', __FILE__)
-      file_path = File.join(data_dir, 'essay.txt')
+    #TODO: Strip out this hack.
+    def get_absolute_path
+      File.expand_path('../../../data/essay.txt', __FILE__)
     end
   end
 end
