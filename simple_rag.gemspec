@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name = "simple_rag"
-  spec.version = SimpleRag::VERSION
+  spec.version = "0.1.0"
   spec.summary = "Simple Rag is a lightweight library that transforms any Ruby project into a simple RAG application."
   spec.authors = ["Landon Gray"]
   spec.email = ["landon.gray@hey.com"]
