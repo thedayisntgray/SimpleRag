@@ -8,6 +8,13 @@
 
 The purpose of simple RAG is to showcase how RAG systems work by using the simplest tools possible to lower the friction to learning. This is not a gem to be used in production and I will likely be adding additional breaking changes to the code.
 
+## Wait what...can you explain how it works?
+
+Sure, here is a high level run through of the RAG architecture:
+
+[simple_rag walkthrough](https://vimeo.com/994746572)
+
+
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
@@ -35,13 +42,17 @@ This process of fetching text given a url could take some time as the text, once
 
 https://github.com/user-attachments/assets/1772ccce-95fd-4876-aa5b-7743b34bfce4
 
-
-
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+## Inspirations and Acknowledgements
+
+This code was inspired by mistral's guide on [Basic Rag](https://docs.mistral.ai/guides/rag/)
+
+[Andrei](https://x.com/rushing_andrei) for making me excited about vector search with his [talks on langchain.rb](https://www.youtube.com/watch?v=VMW8FyvI9hg)!
 
 ## Contributing
 
