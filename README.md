@@ -22,7 +22,7 @@ Lastly, run the following command and add a mistal-ai. You can create one my set
 
 To run the exe locally type:
 
-exe/simple_rag
+    $ exe/simple_rag
 
 You can press enter when prompted to retrieve a default text. You can also search [project gutenberg](https://www.gutenberg.org/) for an html text like [Frankenstein](https://www.gutenberg.org/cache/epub/42324/pg42324.txt) by Mary Shelly.
 This process of fetching text given a url could take some time as the text, once fetched get's passed to an embedding model which converts text chuncks into vectors.
