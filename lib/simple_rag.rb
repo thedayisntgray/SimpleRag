@@ -27,7 +27,6 @@ module SimpleRag
       chat_response.dig("choices", 0, "message", "content")
     end
 
-    # url validator method
     def prompt_user_for_url
       print "Specify a URL to an HTML document you would like to ask questions of (Default: What I Worked On by Paul Graham): "
       input_url = gets.chomp
