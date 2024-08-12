@@ -14,7 +14,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
     $ gem install simple_rag
 
-You will also need to install all dependencies required by the [faiss gem](https://github.com/ankane/faiss-ruby?tab=readme-ov-file#installation)
+You will also need to install all dependencies required by the [faiss gem](https://github.com/ankane/faiss-ruby?tab=readme-ov-file#installation) under the installation section.
 
 Lastly, run the following command and add a mistal-ai. You can create one my setting up a [Mistal AI account](https://docs.mistral.ai/getting-started/quickstart/#account-setup).
 
