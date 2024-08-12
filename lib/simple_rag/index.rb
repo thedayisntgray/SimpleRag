@@ -8,7 +8,7 @@ module SimpleRag
     def load(url)
       response = HTTParty.get(url)
       text = response.body
-      File.write("data/essay.txt", text)
+      File.write(corrected_file_path, text)
       @text = text
       text
     end
@@ -27,6 +27,14 @@ module SimpleRag
       index = Faiss::IndexFlatL2.new(d)
       index.add(text_embeddings)
       index
+    end
+
+    private
+    def corrected_file_path
+      #Todo: Fix this terrible hack.
+      # Get the absolute path to the 'data' directory within the gem
+      data_dir = File.expand_path('../../../data', __FILE__)
+      file_path = File.join(data_dir, 'essay.txt')
     end
   end
 end
