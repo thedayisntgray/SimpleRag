@@ -19,24 +19,30 @@ Sure, here is a high level run through of the RAG architecture:
 
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add simple_rag
+```sh
+bundle add simple_rag
+```
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install simple_rag
+```sh
+gem install simple_rag
+```
 
 You will also need to install all dependencies required by the [faiss gem](https://github.com/ankane/faiss-ruby?tab=readme-ov-file#installation) under the installation section.
 
-Lastly, run the following command and add a mistal-ai. You can create one my setting up a [Mistal AI account](https://docs.mistral.ai/getting-started/quickstart/#account-setup).
+Lastly, run the following command and add a `mistral-ai`. You can create one my setting up a [Mistral AI account](https://docs.mistral.ai/getting-started/quickstart/#account-setup).
 
 ## Usage
 
 To run the exe locally type:
 
-    $ exe/simple_rag
+```sh
+exe/simple_rag
+```
 
 You can press enter when prompted to retrieve a default text. You can also search [project gutenberg](https://www.gutenberg.org/) for an html text like [Frankenstein](https://www.gutenberg.org/cache/epub/42324/pg42324.txt) by Mary Shelly.
-This process of fetching text given a url could take some time as the text, once fetched get's passed to an embedding model which converts text chuncks into vectors.
+This process of fetching text given a url could take some time as the text, once fetched get's passed to an embedding model which converts text chunks into vectors.
 
 
 
@@ -56,4 +62,4 @@ This code was inspired by mistral's guide on [Basic Rag](https://docs.mistral.ai
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/simple_rag.
+Bug reports and pull requests are welcome on GitHub at https://github.com/thedayisntgray/simple_rag.
