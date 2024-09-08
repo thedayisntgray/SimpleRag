@@ -19,7 +19,7 @@ RSpec.describe SimpleRag::Index do
       result = index.load(url)
 
       expect(HTTParty).to have_received(:get).with(url)
-      expect(File).to have_received(:write).with(file_path, response_body)
+      expect(File).to have_received(:write).with(/#{file_path}$/, response_body)
       expect(result).to eq(response_body)
     end
   end

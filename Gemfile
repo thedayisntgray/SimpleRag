@@ -12,6 +12,7 @@ gem "rspec", "~> 3.0"
 gem "httparty"
 gem "numo-narray"
 gem "faiss"
+gem "matrix"
 gem "mistral-ai"
 gem "zeitwerk", "~> 2.6", ">= 2.6.11"
 gem "dotenv", groups: [:development, :test]
