@@ -62,4 +62,4 @@ This code was inspired by mistral's guide on [Basic Rag](https://docs.mistral.ai
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/thedayisntgray/simple_rag.
+Bug reports and pull requests are welcome on GitHub at https://github.com/thedayisntgray/simplerag.
